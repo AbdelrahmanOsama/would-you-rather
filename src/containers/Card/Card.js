@@ -13,13 +13,11 @@ export default function Card(props) {
         if (type === 'unanswered') {
             history.push({
                 pathname: '/questions',
-                search: '?query=abc',
                 state: { detail: data }
             })
         }else{
             history.push({
                 pathname: `/questions/${data.id}`,
-                search: '?query=abc',
             })
         }
     }

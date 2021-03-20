@@ -3,7 +3,7 @@ import NavStyle from './Nav.module.css'
 import { useDispatch } from 'react-redux'
 import { NavLink,useHistory } from 'react-router-dom'
 import { Container,Col,Row } from 'react-bootstrap';
-import { loggedOut } from '../../actions/authedUser'
+import { handleLogOut } from '../../actions/authedUser'
 
 
 export default function Nav (props) {
@@ -13,7 +13,7 @@ export default function Nav (props) {
     const userAvatar = userID && userID.avatarURL
     const userName = userID && userID.name
     const logOut = () =>{
-        dispatch(loggedOut());
+        dispatch(handleLogOut());
         return history.push('/login')
     }
   return (

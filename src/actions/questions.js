@@ -1,6 +1,4 @@
-import { _getQuestions } from '../utils/_DATA'
 import { FETCH_QIESTIONS,SAVE_QUESTION,UPDATE_QUESTION_ANSWER } from '../constants/actionTypes'
-import { showLoading, hideLoading } from 'react-redux-loading'
 
 
 export const recieveQuestions = questions => {

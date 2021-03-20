@@ -15,7 +15,6 @@ export const authedUser = (state = initialState, action) => {
             user:action.user.choosedUser
         }
         case LOG_OUT: 
-        localStorage.removeItem("user");
         return {
             ...state,
             isAuthUser:false,

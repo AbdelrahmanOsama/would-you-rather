@@ -1,7 +1,14 @@
 import React from 'react'
-import { Container,Col,Row } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom'
+import { Container,Col,Row,Button } from 'react-bootstrap';
 
 function Error() {
+    const history = useHistory()
+
+    const goToHome = () => {
+        history.push('/');
+    }
+
     return (
         <div className="body">
              <Container fluid>
@@ -24,7 +31,7 @@ function Error() {
                             <p>Page not found</p>
                             <div className="buttons-con">
                                 <div className="action-link-wrap">
-                                <a href="" className="link-button">Go to Home Page</a>
+                                <Button href="" className="link-button" onClick={goToHome}>Go to Home Page</Button>
                                 </div>
                             </div>
                         </div>

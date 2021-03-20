@@ -44,7 +44,7 @@ export const handleSaveAnswer = ( qid, answer ) => {
         const { authedUser } =  getState();
         try {
             dispatch(showLoading())
-            const question = await _saveQuestionAnswer({
+            await _saveQuestionAnswer({
                 qid,
                 answer,
                 authedUser: authedUser.user[0].id
