@@ -1,0 +1,71 @@
+.cardContainer{
+    width:50%;
+    border: 1px solid #a5a5a5;
+    margin-top: 20px;
+}
+
+.cardStyle{
+    padding: 10px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #008000;
+    justify-content: center;
+    margin-top: 0;
+    background-color: #f3fff6;
+    padding-top: 20px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #008000;
+    background-color: #fff;
+    border-color: #008000 #008000 #fff;
+    font-weight: bold;
+}
+.cardHeader{
+    text-align: -webkit-left;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    font-weight: 600;
+}
+.cardBord{
+    border-right: 1px solid lightgray;
+    place-self: center;
+}
+
+.avatarCard {
+    height: 60px;
+    border-radius: 44px;
+    margin: 10px;
+    border: 1px solid darkgray;
+    padding: 3px;
+}
+
+.questionDis{
+    color: #a5a5a5;
+    width:100px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}  
+
+.pollStyle{
+    width: 95%;
+    color: green;
+    background-color: white;
+    border-color: green;
+    height: 2rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.pollStyle:hover{
+    color: white;
+    background-color: green;
+    border-color: green;
+}
+.Card_cardStyle__10Wv3 {
+    padding: 0px;
+}
+div#uncontrolled-tab-example-tabpane-Answered_Questions {
+    text-align: -webkit-center;
+}

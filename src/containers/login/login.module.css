@@ -1,0 +1,33 @@
+.loginContainer{
+    max-width: -webkit-fill-available; 
+    margin: 0 auto;
+    padding: 10px 0px;
+    border: 1px solid lightgray;
+    text-align: center;
+}
+
+.header{
+    border-bottom: 1px solid darkgray;
+    margin-bottom: 10px;
+}
+.formControl{
+    padding: 0 10px;
+}
+
+Button{
+    width: -webkit-fill-available;
+    margin-top: 15px;
+}
+
+.centerPage{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 30%;
+    width: 30%;
+}
+.signin{
+    color: green;
+    padding-bottom: 10px;
+    font-weight: bold;
+}

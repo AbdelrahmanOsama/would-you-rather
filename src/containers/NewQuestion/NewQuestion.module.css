@@ -1,0 +1,107 @@
+.cardContainer{
+    width:50%;
+    border: 1px solid #a5a5a5;
+    margin-top: 20px;
+    
+}
+
+.cardStyle{
+    padding: 10px;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #008000;
+    justify-content: center;
+    margin-top: 0;
+    background-color: #f3fff6;
+    padding-top: 20px;
+}
+
+.nav-tabs .nav-link.active {
+    color: #008000;
+    background-color: #fff;
+    border-color: #008000 #008000 #fff;
+    font-weight: bold;
+}
+.cardHeader{
+    text-align: -webkit-left;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+    font-weight: 600;
+}
+.cardBord{
+    border-right: 1px solid lightgray;
+    place-self: center;
+}
+
+.avatarCard {
+    height: 60px;
+    border-radius: 44px;
+    margin: 10px;
+    border: 1px solid darkgray;
+    padding: 3px;
+}
+
+.questionDis{
+    color: #a5a5a5;
+    width:100px;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}  
+
+.pollStyle {
+    width: 97%;
+    height: 2rem;
+    margin: 0;
+    margin: 0 10px;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: green;
+    border-color: green;
+    padding: 0 13px;
+}
+.pollStyle:visited {
+    width: 96%;
+    height: 2rem;
+    margin: 0;
+    margin: 0 10px;
+    margin-bottom: 1rem;
+    color: white;
+    background-color: rgb(6, 88, 6);
+    border-color: green;
+    padding: 0 13px;
+}
+
+.textMuted {
+    color: #6c757d!important;
+    width: -webkit-fill-available;
+    margin: 10px;
+}
+
+.separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px;
+    color: gray;
+  }
+  
+  .separator::before,
+  .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .separator:not(:empty)::before {
+    margin-right: .25em;
+  }
+  
+  .separator:not(:empty)::after {
+    margin-left: .25em;
+  }
+
+  input{
+      text-indent: 5px;
+  }

@@ -1,0 +1,49 @@
+nav {
+    padding: 0 10px;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid green;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav li:first-child {
+    padding-left: 0;
+}
+
+ul {
+    padding-left: 0;
+    margin-bottom: 0;
+}
+
+li {
+    list-style-type: none;
+    padding: 10px;
+    text-decoration: none;
+}
+
+a {
+    color: darkgray;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    text-decoration: none;
+    color: green;
+}
+
+.userOptions{
+    float: right;
+}
+
+.logout{
+    color: #dc3545;
+    font-weight: 600;
+    cursor: pointer;
+}
