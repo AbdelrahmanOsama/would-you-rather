@@ -5,21 +5,12 @@ import { Row,Container,Col,Button } from 'react-bootstrap';
 import CardStyle from './Card.module.css'
 
 export default function Card(props) {
-    const { data,type } = props;
+    const { data } = props;
     const history = useHistory();
     const users = useSelector((state) => state.users &&  Object.values(state.users).length > 0 && (Object.values(state.users)))
     const cardUSer = users && users.length > 0 && users.filter(user => user.id === data.author)[0]
     const goToQuestion = () => {
-        if (type === 'unanswered') {
-            history.push({
-                pathname: '/questions',
-                state: { detail: data }
-            })
-        }else{
-            history.push({
-                pathname: `/questions/${data.id}`,
-            })
-        }
+        history.push({pathname: `/questions/${data.id}`})
     }
     return (
 

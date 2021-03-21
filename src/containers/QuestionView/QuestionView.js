@@ -1,32 +1,34 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect,useHistory } from 'react-router-dom'
 import { Row,Container,Col,ProgressBar } from 'react-bootstrap';
 import QuestionStyle from './QuestionView.module.css'
 
-export default function QuestionView(props) {
+export default function QuestionView() {
+    const history = useHistory()
+    const id = (history.location.pathname).substr(11)
     const loggedUser = useSelector((state) => state.authedUser && state.authedUser.user[0].id )
-    const questions = useSelector((state) => state.questions &&  Object.values(state.questions).length > 0 && (Object.values(state.questions)))
-    const UserQuestions = questions && questions.length > 0 && questions.filter(question => question.id === props.match.params.question_id)[0]
-    const user = useSelector((state) => state.users &&  Object.values(state.users).length > 0 && (Object.values(state.users)))
-    if (!UserQuestions) {
-        return <Redirect to="/error"/>
-    }
-    const cardUSer = user && user.length > 0 && user.filter(userInfo => userInfo.id === loggedUser)[0]
-    console.log(cardUSer)
-
-    const opt1 =  (UserQuestions.optionOne.votes.length / (UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length) * 100).toFixed(0);
-    const vote1 = `${UserQuestions.optionOne.votes.length} out of ${UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length} votes`;
-
-    const opt2 = (UserQuestions.optionTwo.votes.length / (UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length) * 100).toFixed(0);
-    const vote2 = `${UserQuestions.optionTwo.votes.length} out of ${UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length} votes`;
-    const votedSec ={ backgroundColor:'#b3e8b3',border:'2px solid #63c163'};
-   
     
+    const questions = useSelector((state) => state.questions &&  Object.values(state.questions).length > 0 && (Object.values(state.questions)))
+    const UserQuestions = questions && questions.length > 0 && questions.filter(question => question.id === id)[0]
+
+    const user = useSelector((state) => state.users &&  Object.values(state.users).length > 0 && (Object.values(state.users)))
+    const cardUSer = user && user.length > 0 && user.filter(userInfo => userInfo.id === UserQuestions.author)[0]
+
+    const opt1 = UserQuestions && (UserQuestions.optionOne.votes.length / (UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length) * 100).toFixed(0);
+    const vote1 = UserQuestions && (`${UserQuestions.optionOne.votes.length} out of ${UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length} votes`);
+
+    const opt2 = UserQuestions && (UserQuestions.optionTwo.votes.length / (UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length) * 100).toFixed(0);
+    const vote2 = UserQuestions && (`${UserQuestions.optionTwo.votes.length} out of ${UserQuestions.optionOne.votes.length + UserQuestions.optionTwo.votes.length} votes`);
+    
+    const votedSec = { backgroundColor:'#b3e8b3',border:'2px solid #63c163'};
+    console.log(UserQuestions)
     return (
         <div  style={{textAlign:'-webkit-center'}}>
             <div className={QuestionStyle.cardContainer}>
                 <div className={QuestionStyle.cardStyle}>
+                    {
+                    UserQuestions &&
                     <div className={QuestionStyle.card}>
                         <h6 className={QuestionStyle.cardHeader}>{`${cardUSer.name} asks:`}</h6>
                         <Container>
@@ -57,6 +59,7 @@ export default function QuestionView(props) {
                             </Row>
                         </ Container>
                     </div>
+                }
                 </div>
             </div>
         </div>

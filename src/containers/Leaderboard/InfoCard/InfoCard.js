@@ -4,7 +4,6 @@ import InfoCardStyle from './InfoCard.module.css'
 
 export default function Card(props) {
     const { data } = props;
-    console.log(data)
     const answered = Object.keys(data.answers).length;
     const created = data.questions.length;
     const Score = answered + created;

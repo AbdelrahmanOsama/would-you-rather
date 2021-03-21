@@ -8,12 +8,10 @@ import Nav from './containers/Nav/Nav'
 import NewQuestion from './containers/NewQuestion/NewQuestion'
 import Leaderboard from './containers/Leaderboard/Leaderboard'
 import Question from './containers/Question/Question'
-import QuestionView from './containers/QuestionView/QuestionView'
 import Error from './containers/Error/Error'
 
 const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch(handleFetchInitial())
 }, [dispatch])
@@ -39,14 +37,9 @@ const App = () => {
               )}>
               </Route>
               <Route
-                path="/questions"
-                exact
-                component={Question}
-              />
-              <Route
                 path="/questions/:question_id"
                 exact
-                component={QuestionView}
+                component={Question}
               />
               <Route path='/add' exact component={NewQuestion} />
               <Route path='/leaderboard' exact component={Leaderboard} />
